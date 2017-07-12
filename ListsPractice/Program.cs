@@ -163,41 +163,61 @@ namespace ListsPractice
             movieDatabase.Add("Howard the Duck");
             movieDatabase.Add("The Last Dragon");
 
+            string userAnswer = Console.ReadLine();
 
-            
-            if (movieDatabase.Contains(Console.ReadLine()))
-            { 
-                Console.WriteLine("Your movie is on the way!!!");
-               
+
+
+            //Do While
+
+            if (userAnswer == "quit")
+            {
+                Console.WriteLine("Thank you for your time. Here is a list of our movies: " + movieDatabase);
             }
-            
             else
             {
-                movieDatabase.Add(Console.ReadLine());
-                Console.WriteLine("The movie title isn't available, but has been added. Please be patient");
+
             }
 
-            Console.WriteLine("Would you like to select another movie?");
-            if (movieDatabase.Contains(Console.ReadLine()))
+            do
             {
-                Console.WriteLine("Your movie is on the way!!!");
+                if (movieDatabase.Contains(userAnswer))
+                {
+                    Console.WriteLine("Your movie is on the way!!!");
 
+                }
+
+                else
+                {
+                    movieDatabase.Add(userAnswer);
+                    Console.WriteLine("The movie title isn't available, but has been added. Please be patient");
+                }
+
+                Console.WriteLine("Would you like to select another movie?");
+                if (movieDatabase.Contains(userAnswer))
+                {
+                    Console.WriteLine("Your movie is on the way!!!");
+
+                }
+
+                else
+                {
+                    movieDatabase.Add(userAnswer);
+                    Console.WriteLine("The movie title isn't available, but has been added. Please be patient");
+                }
             }
+            while (userAnswer != "quit");
 
-            else
-            {
-                movieDatabase.Add(Console.ReadLine());
-                Console.WriteLine("The movie title isn't available, but has been added. Please be patient");
-            }
 
-            //if (Console.Read
-            //{
-            //    Console.WriteLine("Thank you for your time. Here is a list of our movies: " + movieDatabase);
-            //}
 
+
+
+
+
+            string movieSearch;
+            Console.WriteLine("Welcome to ...");
+            List<string> movies = new List<string> { "" };
 
 
         }
     }
 }
- 
